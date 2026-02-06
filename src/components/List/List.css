@@ -1,0 +1,70 @@
+.List {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.List input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0px;
+}
+
+.List > input:focus {
+  outline: none;
+  border-bottom: 1px solid #38a169;
+}
+
+.List .Todos_Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.List_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 14px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.List_filter button {
+  background: none;
+  border: 1px solid #e5e7eb;
+
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.List_filter button:hover {
+  background-color: #f0fdf4;
+  color: #2f855a;
+}
+
+.List_filter button.active {
+  background-color: #2f855a;
+  color: white;
+}
+
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.empty p {
+  margin: 0;
+}
