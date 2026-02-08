@@ -10,9 +10,7 @@ const Header = () => {
     const fetchQuote = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(
-          "https://corsproxy.io/?https://type.fit/api/quotes"
-        );
+        const response = await fetch("/api/fetch-quote");
         const data = await response.json();
 
         // 데이터 중에서 랜덤으로 하나 선택
