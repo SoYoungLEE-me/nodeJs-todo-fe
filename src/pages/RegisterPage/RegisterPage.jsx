@@ -29,7 +29,7 @@ const RegisterPage = () => {
       });
       console.log("register success", response.data);
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         navigate("/login");
       }
     } catch (err) {
@@ -89,6 +89,14 @@ const RegisterPage = () => {
         <button type="submit" className="register-button">
           Create Account
         </button>
+
+        <div className="login-test-account">
+          <p>
+            <strong>Test Account</strong>
+          </p>
+          <p>Email: test2@test.com</p>
+          <p>Password: 1234</p>
+        </div>
 
         <p className="register-footer">
           Already have an account?

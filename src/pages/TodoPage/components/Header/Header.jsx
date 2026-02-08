@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
+import api from "../../../../utils/api";
 
 const Header = () => {
   const [quote, setQuote] = useState("Loading today’s inspiration...");
   const [author, setAuthor] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const isLoggedIn = Boolean(sessionStorage.getItem("token"));
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    delete api.defaults.headers.authorization;
+    navigate("/login");
+  };
 
   useEffect(() => {
     const fetchQuote = async () => {
@@ -40,6 +52,16 @@ const Header = () => {
 
   return (
     <header className="Header">
+      {isLoggedIn ? (
+        <button className="Header_login_btn" onClick={handleLogout}>
+          Logout
+        </button>
+      ) : (
+        <button className="Header_login_btn" onClick={() => navigate("/login")}>
+          Login
+        </button>
+      )}
+
       <div className="Header_left">
         <h1>{formattedDate}</h1>
       </div>

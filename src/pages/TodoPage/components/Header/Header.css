@@ -1,10 +1,30 @@
 .Header {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 20px 0;
   border-bottom: 2px solid #f0fdf4;
   margin-bottom: 30px;
   gap: 16px;
+}
+
+.Header_login_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #c6f6d5;
+  background-color: #f0fdf4;
+  color: #2f855a;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.Header_login_btn:hover {
+  background-color: #c6f6d5;
 }
 
 .Header_left h3 {

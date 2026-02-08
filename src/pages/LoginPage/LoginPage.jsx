@@ -81,6 +81,14 @@ const LoginPage = () => {
           Log In
         </button>
 
+        <div className="login-test-account">
+          <p>
+            <strong>Test Account</strong>
+          </p>
+          <p>Email: test2@test.com</p>
+          <p>Password: 1234</p>
+        </div>
+
         <p className="login-footer">
           Don&apos;t have an account?{" "}
           <Link to="/register" className="login-link">
