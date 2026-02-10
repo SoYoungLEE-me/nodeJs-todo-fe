@@ -3,18 +3,19 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import api from "../../../../utils/api";
 
-const Header = () => {
+const Header = ({ user, setUser }) => {
   const [quote, setQuote] = useState("Loading today’s inspiration...");
   const [author, setAuthor] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  const isLoggedIn = Boolean(sessionStorage.getItem("token"));
+  const isLoggedIn = Boolean(user);
 
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     delete api.defaults.headers.authorization;
+    setUser(null);
     navigate("/login");
   };
 

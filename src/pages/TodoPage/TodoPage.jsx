@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import api from "../../utils/api";
 
-const TodoPage = () => {
+const TodoPage = ({ user, setUser }) => {
   const [todoList, setTodoList] = useState([]);
 
   const getTasks = async () => {
@@ -69,7 +69,7 @@ const TodoPage = () => {
   return (
     <>
       <div>
-        <Header />
+        <Header user={user} setUser={setUser} />
         <Editor onCreate={onCreate} />
         <List
           todoList={todoList}

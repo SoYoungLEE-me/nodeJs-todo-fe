@@ -33,6 +33,9 @@ const TodoItem = ({ id, item, onDelete, onUpdate }) => {
       <div className={`content ${item.isComplete ? "done" : ""}`}>
         {item.task}
       </div>
+      <div className={`author ${item.isComplete ? "done" : ""}`}>
+        {item.author.name}
+      </div>
       <div className="date">
         {item.isComplete
           ? `Completed: ${formatDate(item.updatedAt)}`

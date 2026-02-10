@@ -15,6 +15,18 @@
   flex: 1;
 }
 
+.TodoItem .author {
+  font-size: 13px;
+  color: #374151;
+  background-color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+.TodoItem .author.done {
+  color: #9ca3af;
+}
+
 .content.done {
   text-decoration: line-through;
   color: #999;
